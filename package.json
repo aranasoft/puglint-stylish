@@ -1,0 +1,51 @@
+{
+  "name": "puglint-stylish",
+  "version": "0.0.0",
+  "description": "Stylish reporter for pug-lint",
+  "repository": "aranasoft/puglint-stylish",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo --space && mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "pug-lint",
+    "puglint",
+    "pug",
+    "jade",
+    "reporter",
+    "format",
+    "formatter",
+    "validate",
+    "lint",
+    "stylish",
+    "elegant",
+    "pretty"
+  ],
+  "author": "Arana Software <info@aranasoft.com> (http://www.aranasoft.com)",
+  "contibutors": [
+    "Jay Harris <jay@aranasoft.com>"
+  ],
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/aranasoft/puglint-stylish/issues"
+  },
+  "homepage": "https://github.com/aranasoft/puglint-stylish",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "log-symbols": "^1.0.0",
+    "plur": "^2.1.0",
+    "string-length": "^1.0.0",
+    "text-table": "^0.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "*",
+    "pug-lint": ">=1.2 <3",
+    "xo": "*"
+  }
+}
