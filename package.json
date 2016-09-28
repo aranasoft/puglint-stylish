@@ -7,7 +7,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo --space && mocha"
+    "test": "xo --space && mocha",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "files": [
     "index.js"
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "conventional-changelog": "^1.1.0",
     "mocha": "*",
     "pug-lint": ">=1.2 <3",
     "xo": "*"
