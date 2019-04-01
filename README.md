@@ -1,5 +1,5 @@
 # puglint-stylish [![Build Status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url]
-==================
+
 [![Screenshot](http://img.shields.io/badge/pretty-stylish-ff69b4.svg)][screenshot-image] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
 
 > Stylish Reporter for [pug-lint](https://github.com/pugjs/pug-lint).
