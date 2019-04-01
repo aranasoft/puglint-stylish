@@ -1,6 +1,6 @@
 {
   "name": "puglint-stylish",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Stylish reporter for pug-lint",
   "repository": "aranasoft/puglint-stylish",
   "engines": {
