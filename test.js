@@ -1,63 +1,65 @@
 'use strict';
 /* eslint-env mocha */
-var assert = require('assert');
-var spawn = require('child_process').spawn;
-var path = require('path');
-var chalk = require('chalk');
-var expect = require('chai').expect;
+const assert = require('assert');
+const {spawn} = require('child_process');
+const path = require('path');
+const {expect} = require('chai');
+const stripColor = require('strip-ansi');
 
-var bin = require.resolve('pug-lint/bin/pug-lint');
+const bin = require.resolve('pug-lint/bin/pug-lint');
 
 function run(args, cb) {
-  var command = [bin].concat(args);
-  var stdout = '';
-  var stderr = '';
-  var node = process.execPath;
-  var child = spawn(node, command);
+  const command = [bin].concat(args);
+  let stdout = '';
+  let stderr = '';
+  const node = process.execPath;
+  const child = spawn(node, command);
 
-  if (child.stderr) {
-    child.stderr.on('data', function (chunk) {
-      stderr += chunk;
-    });
-  }
+  child.stderr.on('data', data => {
+    stderr += data;
+  });
 
-  if (child.stdout) {
-    child.stdout.on('data', function (chunk) {
-      stdout += chunk;
-    });
-  }
+  child.stdout.on('data', data => {
+    stdout += data;
+  });
 
-  child.on('error', cb);
+  child.on('error', () => {
+    cb();
+  });
 
-  child.on('close', function (code) {
+  child.on('close', code => {
     cb(null, code, stdout, stderr);
   });
 
   return child;
 }
 
-describe('with linting errors', function () {
-  var output;
+describe('with linting errors', () => {
+  let output;
 
-  before(function (done) {
-    var args = ['-r', './', path.resolve('./fixture.pug')];
+  before(done => {
+    const args = ['-r', './', path.resolve('./fixture.pug')];
 
-    run(args, function (err, code, stdout) {
+    run(args, (err, code, stdout) => {
       assert(!err, err);
-      output = chalk.stripColor(stdout || '');
+      output = stripColor(stdout);
       done();
     });
   });
 
-  it('should display filename', function () {
+  it('should contain errors', () => {
+    return expect(output).to.not.be.empty;
+  });
+
+  it('should display filename', () => {
     return expect(output).to.contain('fixture.pug');
   });
 
-  it('should not display current directory path', function () {
+  it('should not display current directory path', () => {
     return expect(output).to.not.contain(process.cwd());
   });
 
-  it('should display lint error', function () {
-    return expect(output).to.contain('unexpected text "|');
+  it('should display lint error', () => {
+    return expect(output).to.contain('Unexpected character \'#');
   });
 });

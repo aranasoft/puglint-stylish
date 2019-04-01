@@ -1,21 +1,19 @@
 'use strict';
-var path = require('path');
-var chalk = require('chalk');
-var table = require('text-table');
-var logSymbols = require('log-symbols');
-var stringLength = require('string-length');
-var plur = require('plur');
+const path = require('path');
+const chalk = require('chalk');
+const table = require('text-table');
+const logSymbols = require('log-symbols');
+const stringLength = require('string-length');
+const plur = require('plur');
 
-module.exports = function (results) {
-  var total = results.length;
-  var ret = '';
-  var headers = [];
-  var prevfile;
+module.exports = results => {
+  const total = results.length;
+  let ret = '';
+  const headers = [];
+  let prevfile;
 
-  ret += table(results.map(function (err, i) {
-    // console.log(item);
-
-    var line = [
+  ret += table(results.map((err, i) => {
+    const line = [
       '',
       chalk.gray('line ' + err.line),
       chalk.gray('col ' + err.column),
@@ -30,8 +28,8 @@ module.exports = function (results) {
 
     return line;
   }), {
-    stringLength: stringLength
-  }).split('\n').map(function (item, i) {
+    stringLength
+  }).split('\n').map((item, i) => {
     return headers[i] ? '\n' + chalk.underline(headers[i]) + '\n' + item : item;
   }).join('\n') + '\n\n';
 
