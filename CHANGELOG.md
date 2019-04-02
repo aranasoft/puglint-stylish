@@ -1,3 +1,7 @@
+## [1.0.1](https://github.com/aranasoft/puglint-stylish/compare/v1.0.0...v1.0.1) (2019-04-02)
+
+
+
 # [1.0.0](https://github.com/aranasoft/puglint-stylish/compare/v0.1.1...v1.0.0) (2019-04-01)
 
 
