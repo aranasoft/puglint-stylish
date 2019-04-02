@@ -4,7 +4,7 @@
   "description": "Stylish reporter for pug-lint",
   "repository": "aranasoft/puglint-stylish",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=8.0"
   },
   "scripts": {
     "test": "xo --space && mocha",
