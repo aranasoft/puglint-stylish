@@ -37,18 +37,18 @@
   },
   "homepage": "https://github.com/aranasoft/puglint-stylish",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "log-symbols": "^2.2.0",
+    "chalk": "^3.0.0",
+    "log-symbols": "^3.0.0",
     "plur": "^3.0.1",
     "string-length": "^3.0.0",
     "text-table": "^0.2.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "conventional-changelog": "^3.0.6",
+    "conventional-changelog": "^3.1.15",
     "mocha": "^6.2.2",
-    "pug-lint": ">=1.2 <3",
-    "strip-ansi": "^5.2.0",
+    "pug-lint": "^2.6.0",
+    "strip-ansi": "^6.0.0",
     "xo": "*"
   }
 }
