@@ -46,7 +46,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "conventional-changelog": "^3.1.15",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "pug-lint": "^2.6.0",
     "strip-ansi": "^6.0.0",
     "xo": "*"
